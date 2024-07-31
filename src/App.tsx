@@ -1,10 +1,11 @@
+import WebPortofolio from "./pages/WebPortofolio"
 
 
 function App() {
  
   return (
     <>
-     <div className="font-bold">halo cok</div>
+     <WebPortofolio />
     </>
   )
 }
