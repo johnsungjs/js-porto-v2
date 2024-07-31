@@ -7,23 +7,20 @@ export default function HeroSection() {
           <div className="flex flex-wrap">
             <div className="w-full self-center px-4 lg:w-1/2">
               <h1 className="text-base font-semibold text-textColor md:text-xl">
-                Halo Semua, saya{" "}
+                Hello I am,{" "}
                 <span className="block font-bold text-textColor text-4xl mt-1 lg:text-5xl">
                   John Sung
                 </span>
               </h1>
-              <h2 className="font-medium text-primary text-lg mb-5 lg:text-2xl">
-                Web & <span className="text-dark">Mobile Developer</span>{" "}
-              </h2>
-              <p className="font-medium text-textColor mb-10 leading-relaxed">
-                Belajar web programming itu mudah kan?{" "}
-                <span className="text-dark font-bold">ngga</span>
+              <p className="font-medium text-lg mt-1 mb-6 lg:text-lg">
+                Mobile Developer | Fullstack Web Developer | AI Developer
               </p>
               <a
-                href="https://wa.me/+6281211899299"
+                target="blank"
+                href="https://docs.google.com/document/d/1Aoq01HoBBjX1-nDmxhfsnbIkOwqk5GRhpofM2XIRoiM/edit?usp=sharing"
                 className="text-base font-semibold text-white bg-primary py-3 px-8 rounded-full hover:shadow-lg hover:opacity-80 transition duration-300 ease-in-out"
               >
-                Hubungi Saya
+                View My Curriculum Vitae
               </a>
             </div>
             <div className="w-full self-end px-4 lg:w-1/2">

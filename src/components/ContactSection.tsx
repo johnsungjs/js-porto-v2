@@ -1,4 +1,16 @@
-export default function ContactSection() {
+import { memo, useState } from "react";
+
+interface InputUser {
+  name: string;
+  message: string;
+}
+
+export default memo(function ContactSection() {
+  const [inputUser, setInputUser] = useState<InputUser>({
+    name: "",
+    message: "",
+  });
+
   return (
     <>
       {/* CONTANCT SECTION START */}
@@ -10,12 +22,10 @@ export default function ContactSection() {
                 Contact
               </h4>
               <h2 className="font-bold text-dark text-3xl mb-4 sm:text-4xl lg:text-5xl">
-                Hubungi Saya
+                Contact Me
               </h2>
               <p className="font-medium text-base text-primary md:text-lg">
-                auctor neque vitae tempus quam pellentesque nec nam aliquam sem
-                et tortor consequat id porta nibh aliquam sem et tortor
-                consequat id porta nibh
+                Feel Free to Contact Me Via Whatsapp To My Personal Number
               </p>
             </div>
           </div>
@@ -26,45 +36,44 @@ export default function ContactSection() {
                   htmlFor="name"
                   className="text-base font-bold text-primary"
                 >
-                  Nama
+                  Name
                 </label>
                 <input
                   type="text"
                   id="name"
                   className="w-full bg-slate-300 text-dark p-3 rounded-md focus:outline-none focus:ring-primary focus:ring-1 focus:border-primary"
+                  onBlur={(e) =>
+                    setInputUser((prev: InputUser) => {
+                      return { ...prev, name: e.target.value };
+                    })
+                  }
                 />
               </div>
-              <div className="w-full px-4 mb-8">
-                <label
-                  htmlFor="email"
-                  className="text-base font-bold text-primary"
-                >
-                  Email
-                </label>
-                <input
-                  type="text"
-                  id="email"
-                  className="w-full bg-slate-300 text-dark p-3 rounded-md focus:outline-none focus:ring-primary focus:ring-1 focus:border-primary"
-                />
-              </div>
+
               <div className="w-full px-4 mb-8">
                 <label
                   htmlFor="message"
                   className="text-base font-bold text-primary"
                 >
-                  Pesan
+                  Message
                 </label>
                 <textarea
                   id="message"
                   className="w-full h-32 bg-slate-300 text-dark p-3 rounded-md focus:outline-none focus:ring-primary focus:ring-1 focus:border-primary"
-                ></textarea>
+                  onBlur={(e) =>
+                    setInputUser((prev: InputUser) => {
+                      return { ...prev, message: e.target.value };
+                    })
+                  }
+                />
               </div>
               <div className="w-full px-4">
                 <a
+                  target="blank"
+                  href={`https://wa.me/+6281211899299?text=Hello I'm ${inputUser.name}, i've just seen your profile though your portfolio page, \n\n ${inputUser.message}`}
                   className="w-full block text-center text-base font-semibold text-white bg-primary py-3 rounded-full hover:opacity-80 hover:shadow-lg transition duration-500"
-                  href="https://wa.me/+6281211899299"
                 >
-                  Hubungi Saya
+                  Contact Me
                 </a>
               </div>
             </div>
@@ -74,4 +83,4 @@ export default function ContactSection() {
       {/* CONTANCT SECTION END */}
     </>
   );
-}
+});

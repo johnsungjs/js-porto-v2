@@ -1,6 +1,4 @@
-import { useState } from "react";
 import Navbar from "../components/Navbar";
-import BigModal from "../components/BigModal";
 import HeroSection from "../components/HeroSection";
 import PortofolioSection from "../components/PortofolioSection";
 import ClientSection from "../components/ClientSection";
@@ -8,13 +6,13 @@ import FooterSection from "../components/FooterSection";
 import ContactSection from "../components/ContactSection";
 
 export default function WebPortofolio() {
-  const [showModal, setShowModal] = useState(false);
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-
-  console.log(showModal);
+  // usestate for modal
+  // const [showModal, setShowModal] = useState(false);
 
   return (
     <>
+      {/* TODO: CANT HANDLE THE SCROLL ACTION ON OVERFLOW */}
+      {/* <div className="flex flex-col w-screen h-screen overflow-x-hidden overflow-y-auto"> */}
       {/* HEADER START */}
       <Navbar />
       {/* HEADER END */}
@@ -28,14 +26,15 @@ export default function WebPortofolio() {
 
       <FooterSection />
 
-      {/* MODAL SECTION START */}
-      <BigModal
-        title="hardcode title"
-        body="hardcode body"
-        isVisible={showModal}
-        setIsVisible={setShowModal}
-      />
+      {/* MODAL USAGE IF USED */}
+      {/* <BigModal
+          title="hardcode title"
+          body="hardcode body"
+          isVisible={showModal}
+          setIsVisible={setShowModal}
+        /> */}
       {/* MODAL SECTION END */}
+      {/* </div> */}
     </>
   );
 }

@@ -7,6 +7,8 @@ export default function Navbar() {
 
   useEffect(() => {
     window.onscroll = () => {
+      console.log('aha');
+
       const fixedNav = headerRef.current!.offsetTop;
 
       if (window.scrollY > fixedNav) {

@@ -28,7 +28,7 @@ export default function AboutSection() {
               <div className="flex items-center">
                 {/* LINKEDIN */}
                 <a
-                  href="https://linkedin.com"
+                  href="https://linkedin.com/in/johnsungjs"
                   target="_blank"
                   rel="noreferrer"
                   className="w-9 h-9 mr-3 rounded-full flex justify-center items-center border border-slate-400 hover:border-primary hover:bg-primary hover:text-white"

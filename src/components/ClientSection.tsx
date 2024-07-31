@@ -6,43 +6,51 @@ export default function ClientSection() {
         <div className="container">
           <div className="w-full px-4">
             <div className="mx-auto text-center mb-16">
-              <h4 className="font-semibold text-lg text-primary mb-2">
+              <h4 className="font-semibold text-lg text-secondary mb-2">
                 Clients
               </h4>
               <h2 className="font-bold text-white text-3xl mb-4 sm:text-4xl lg:text-5xl">
-                Yang Pernah Bekerjasama
+                Have worked with
               </h2>
               <p className="font-medium text-base text-secondary md:text-lg">
-                auctor neque vitae tempus quam pellentesque nec nam aliquam sem
-                et tortor consequat id porta{" "}
+                My Previous satisfied clients, coming from various background
+                and size such as startup, individual business, and corporation{" "}
               </p>
             </div>
           </div>
           <div className="w-full px-4">
             <div className="flex flex-wrap items-center justify-center">
               <a
-                href="#home"
-                className="max-w-[120px] mx-4 py-4 grayscale opacity-60 transition duration-500 hover:grayscale-0 hover:opacity-100 lg:mx-6 xl:mx-8"
+                href="https://bankmega.com/"
+                target="blank"
+                className="w-[120px] mx-4 py-4 grayscale opacity-60 transition duration-500 hover:grayscale-0 hover:opacity-100 lg:mx-6 xl:mx-8"
               >
-                <img src={"/images/clients/apple.svg"} alt="mekdi" />
+                <img
+                  src={"/images/clients/logoMegaKotak.png"}
+                  alt="bank-mega"
+                />
               </a>
               <a
-                href="#home"
-                className="max-w-[120px] mx-4 py-4 grayscale opacity-60 transition duration-500 hover:grayscale-0 hover:opacity-100 lg:mx-6 xl:mx-8"
+                href="https://www.delisome.my.id/"
+                target="blank"
+                className="w-[120px] mx-4 py-4 grayscale opacity-60 transition duration-500 hover:grayscale-0 hover:opacity-100 lg:mx-6 xl:mx-8"
               >
-                <img src={"/images/clients/apple.svg"} alt="google" />
+                <img
+                  className="rounded-full scale-90"
+                  src={"/images/clients/delisome.jpeg"}
+                  alt="bank-mega"
+                />
               </a>
               <a
-                href="#home"
-                className="max-w-[120px] mx-4 py-4 grayscale opacity-60 transition duration-500 hover:grayscale-0 hover:opacity-100 lg:mx-6 xl:mx-8"
+                href="https://www.okeo.shop/"
+                target="blank"
+                className="w-[120px] mx-4 py-4 grayscale opacity-60 transition duration-500 hover:grayscale-0 hover:opacity-100 lg:mx-6 xl:mx-8"
               >
-                <img src={"/images/clients/apple.svg"} alt="apple" />
-              </a>
-              <a
-                href="#home"
-                className="max-w-[120px] mx-4 py-4 grayscale opacity-60 transition duration-500 hover:grayscale-0 hover:opacity-100 lg:mx-6 xl:mx-8"
-              >
-                <img src={"/images/clients/apple.svg"} alt="bmw" />
+                <img
+                  className="rounded-full scale-90"
+                  src={"/images/clients/okeo.jpg"}
+                  alt="bank-mega"
+                />
               </a>
             </div>
           </div>
