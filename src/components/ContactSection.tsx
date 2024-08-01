@@ -1,4 +1,4 @@
-import { memo, useState } from "react";
+import { memo, useMemo, useState } from "react";
 
 interface InputUser {
   name: string;
@@ -10,6 +10,16 @@ export default memo(function ContactSection() {
     name: "",
     message: "",
   });
+
+  const whatsAppUriWithMessage = useMemo(
+    () =>
+      encodeURI(
+        `https://wa.me/+6281211899299?text=Hello I'm ${inputUser.name}, i've just seen your profile though your portfolio page, \n\n ${inputUser.message}`
+      ),
+    [inputUser]
+  );
+
+  console.log(whatsAppUriWithMessage, whatsAppUriWithMessage);
 
   return (
     <>
@@ -70,7 +80,7 @@ export default memo(function ContactSection() {
               <div className="w-full px-4">
                 <a
                   target="blank"
-                  href={`https://wa.me/+6281211899299?text=Hello I'm ${inputUser.name}, i've just seen your profile though your portfolio page, \n\n ${inputUser.message}`}
+                  href={whatsAppUriWithMessage}
                   className="w-full block text-center text-base font-semibold text-white bg-primary py-3 rounded-full hover:opacity-80 hover:shadow-lg transition duration-500"
                 >
                   Contact Me

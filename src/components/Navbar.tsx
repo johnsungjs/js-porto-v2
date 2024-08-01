@@ -7,8 +7,6 @@ export default function Navbar() {
 
   useEffect(() => {
     window.onscroll = () => {
-      console.log('aha');
-
       const fixedNav = headerRef.current!.offsetTop;
 
       if (window.scrollY > fixedNav) {
@@ -63,17 +61,10 @@ export default function Navbar() {
                       href="#home"
                       className="text-base text-dark py-2 mx-8 flex group-hover:text-primary"
                     >
-                      Beranda
+                      Home
                     </a>
                   </li>
-                  <li className="group">
-                    <a
-                      href="#about"
-                      className="text-base text-dark py-2 mx-8 flex group-hover:text-primary"
-                    >
-                      Tentang Saya
-                    </a>
-                  </li>
+
                   <li className="group">
                     <a
                       href="#portfolio"
@@ -87,10 +78,10 @@ export default function Navbar() {
                   </li> */}
                   <li className="group">
                     <a
-                      href="#blog"
+                      href="#clients"
                       className="text-base text-dark py-2 mx-8 flex group-hover:text-primary"
                     >
-                      Blog
+                      Clients
                     </a>
                   </li>
                   <li className="group">
