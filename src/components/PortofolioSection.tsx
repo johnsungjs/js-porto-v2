@@ -73,10 +73,9 @@ export default forwardRef<HTMLDivElement>(function PortofolioSection(
                 iOS and Android devices.
               </p>
             </div>
-            <div className="mb-12 p-4 md:w-1/2">
-              <div className="rounded-md shadow-md overflow-hidden">
+            <div className="mb-12 p-4">
+              <div className="rounded-md shadow-md overflow-hidden md:mx-12">
                 <img
-                  className=""
                   src={"/images/portfolio/1.jpeg"}
                   alt="cashier app"
                 />
