@@ -1,8 +1,10 @@
-export default function ClientSection() {
+import { forwardRef } from "react";
+
+export default forwardRef<HTMLDivElement>(function ClientSection(_props, ref) {
   return (
     <>
       {/* CLIENT SECTION START */}
-      <section id="clients" className="pt-36 pb-32 bg-slate-700">
+      <section ref={ref} id="clients" className="pt-36 pb-32 bg-slate-700">
         <div className="container">
           <div className="w-full px-4">
             <div className="mx-auto text-center mb-16">
@@ -59,4 +61,4 @@ export default function ClientSection() {
       {/* CLIENT SECTION END */}
     </>
   );
-}
+});

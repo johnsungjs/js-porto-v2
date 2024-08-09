@@ -1,4 +1,6 @@
-export default function FooterSection() {
+import { forwardRef } from "react";
+
+export default forwardRef<HTMLDivElement>(function FooterSection() {
   return (
     <>
       {/* FOOTER SECTION START */}
@@ -107,4 +109,4 @@ export default function FooterSection() {
       {/* FOOTER SECTION END */}
     </>
   );
-}
+});

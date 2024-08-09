@@ -1,8 +1,13 @@
-export default function PortofolioSection() {
+import { forwardRef } from "react";
+
+export default forwardRef<HTMLDivElement>(function PortofolioSection(
+  _props,
+  ref
+) {
   return (
     <>
       {/* PORTFOLIO SECTION START */}
-      <section id="portfolio" className="pt-36 pb-16 bg-slate-200">
+      <section ref={ref} id="portfolio" className="pt-36 pb-16 bg-slate-200">
         <div className="container">
           <div className="w-full px-4">
             <div className="max-w-xl mx-auto text-center mb-16">
@@ -94,4 +99,4 @@ export default function PortofolioSection() {
       {/* PORTFOLIO SECTION END */}
     </>
   );
-}
+});

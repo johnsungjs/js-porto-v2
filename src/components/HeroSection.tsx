@@ -1,8 +1,10 @@
-export default function HeroSection() {
+import { forwardRef } from "react";
+
+export default forwardRef<HTMLDivElement>(function HeroSection(_props, ref) {
   return (
     <>
       {/* HERO SECTION START */}
-      <section id="home" className="pt-36 bg-bgColor">
+      <section ref={ref} id="home" className="pt-36 bg-bgColor">
         <div className="container">
           <div className="flex flex-wrap">
             <div className="w-full self-center px-4 lg:w-1/2">
@@ -38,4 +40,4 @@ export default function HeroSection() {
       {/* HERO SECTION END */}
     </>
   );
-}
+});

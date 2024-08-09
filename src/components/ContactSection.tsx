@@ -1,11 +1,11 @@
-import { memo, useMemo, useState } from "react";
+import { forwardRef, useMemo, useState } from "react";
 
 interface InputUser {
   name: string;
   message: string;
 }
 
-export default memo(function ContactSection() {
+export default forwardRef<HTMLDivElement>(function ContactSection(_props, ref) {
   const [inputUser, setInputUser] = useState<InputUser>({
     name: "",
     message: "",
@@ -19,12 +19,10 @@ export default memo(function ContactSection() {
     [inputUser]
   );
 
-  console.log(whatsAppUriWithMessage, whatsAppUriWithMessage);
-
   return (
     <>
       {/* CONTANCT SECTION START */}
-      <section id="contact" className="pt-36 pb-32">
+      <section ref={ref} id="contact" className="pt-36 pb-32">
         <div className="container">
           <div className="w-full px-4">
             <div className="max-w-xl mx-auto text-center mb-16">

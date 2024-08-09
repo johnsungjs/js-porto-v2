@@ -1,9 +1,13 @@
 import { useEffect, useRef, useState } from "react";
 
-export default function Navbar() {
+interface NavbarProps {
+  portofolioRef: React.MutableRefObject<HTMLDivElement[] | null[]>;
+}
+
+export default function Navbar({ portofolioRef }: NavbarProps) {
   const [hamburger, setHamburger] = useState(false);
 
-  const headerRef = useRef<HTMLInputElement | null>(null);
+  const headerRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
     window.onscroll = () => {
@@ -57,40 +61,60 @@ export default function Navbar() {
               >
                 <ul className="block lg:flex">
                   <li className="group">
-                    <a
-                      href="#home"
+                    <button
+                      onClick={() => {
+                        portofolioRef.current[0]?.scrollIntoView({
+                          behavior: "smooth",
+                        });
+                        setHamburger(false);
+                      }}
                       className="text-base text-dark py-2 mx-8 flex group-hover:text-primary"
                     >
                       Home
-                    </a>
+                    </button>
                   </li>
 
                   <li className="group">
-                    <a
-                      href="#portfolio"
+                    <button
+                      onClick={() => {
+                        portofolioRef.current[1]?.scrollIntoView({
+                          behavior: "smooth",
+                        });
+                        setHamburger(false);
+                      }}
                       className="text-base text-dark py-2 mx-8 flex group-hover:text-primary"
                     >
                       Portfolio
-                    </a>
+                    </button>
                   </li>
                   {/* <li className="group">
                     <a href="#clients" className="text-base text-dark py-2 mx-8 flex group-hover:text-primary">Clients</a>
                   </li> */}
                   <li className="group">
-                    <a
-                      href="#clients"
+                    <button
+                      onClick={() => {
+                        portofolioRef.current[2]?.scrollIntoView({
+                          behavior: "smooth",
+                        });
+                        setHamburger(false);
+                      }}
                       className="text-base text-dark py-2 mx-8 flex group-hover:text-primary"
                     >
                       Clients
-                    </a>
+                    </button>
                   </li>
                   <li className="group">
-                    <a
-                      href="#contact"
+                    <button
+                      onClick={() => {
+                        portofolioRef.current[3]?.scrollIntoView({
+                          behavior: "smooth",
+                        });
+                        setHamburger(false);
+                      }}
                       className="text-base text-dark py-2 mx-8 flex group-hover:text-primary"
                     >
                       Contact
-                    </a>
+                    </button>
                   </li>
                 </ul>
               </nav>
