@@ -1,4 +1,7 @@
 import { forwardRef } from "react";
+import CashierAppSlider from "./CashierAppSlider";
+import DelisomeSlider from "./DelisomeSlider";
+import FoodAppSlider from "./FoodAppSlider";
 
 export default forwardRef<HTMLDivElement>(function PortofolioSection(
   _props,
@@ -33,14 +36,8 @@ export default forwardRef<HTMLDivElement>(function PortofolioSection(
             </div>
           </div>
           <div className="mx-auto w-full px-4 flex flex-wrap justify-center xl:w-10/12">
-            <div className="mb-12 p-4 md:w-1/2">
-              <div className="rounded-md overflow-hidden">
-                <img
-                  className="h-[600px] mx-auto"
-                  src={"/images/portfolio/delisome.jpeg"}
-                  alt="cashier app"
-                />
-              </div>
+            <div className="mb-12 p-4 md:w-1/2 w-full">
+              <DelisomeSlider />
               <h3 className="font-semibold text-2xl text-primary mt-5 mb-3 text-center hover:underline cursor-pointer">
                 <a href="https://www.delisome.my.id/" target="blank">
                   Delisome Marketplace
@@ -54,14 +51,8 @@ export default forwardRef<HTMLDivElement>(function PortofolioSection(
                 <span className="text-primary">Java Spring Boot</span>
               </p>
             </div>
-            <div className="mb-12 p-4 md:w-1/2">
-              <div className="rounded-md overflow-hidden">
-                <img
-                  className="h-[600px] mx-auto"
-                  src={"/images/portfolio/foodapp.jpeg"}
-                  alt="cashier app"
-                />
-              </div>
+            <div className="mb-12 p-4 md:w-1/2 w-full">
+              <FoodAppSlider />
               <h3 className="font-semibold text-2xl text-primary mt-5 mb-3 text-center">
                 Food App
               </h3>
@@ -73,13 +64,9 @@ export default forwardRef<HTMLDivElement>(function PortofolioSection(
                 iOS and Android devices.
               </p>
             </div>
-            <div className="mb-12 p-4">
-              <div className="rounded-md shadow-md overflow-hidden md:mx-12">
-                <img
-                  src={"/images/portfolio/1.jpeg"}
-                  alt="cashier app"
-                />
-              </div>
+            <div className="mb-12 p-4 w-full">
+              <CashierAppSlider />
+
               <h3 className="font-semibold text-2xl text-primary mt-5 mb-3 text-center">
                 Cashier App
               </h3>

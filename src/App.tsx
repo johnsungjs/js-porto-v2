@@ -1,4 +1,4 @@
-import WebPortofolio from "./pages/WebPortofolio"
+import WebPortofolio from "./pages/WebPortfolio"
 
 
 function App() {

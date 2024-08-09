@@ -7,10 +7,10 @@ import ContactSection from "../components/ContactSection";
 import { useEffect, useRef } from "react";
 import { useParams } from "react-router-dom";
 
-export default function WebPortofolio() {
+export default function WebPortfolio() {
   // usestate for modal
   // const [showModal, setShowModal] = useState(false);
-  const portofolioRef = useRef<HTMLDivElement[] | null[]>([]);
+  const portfolioRef = useRef<HTMLDivElement[] | null[]>([]);
 
   const params = useParams();
 
@@ -19,19 +19,19 @@ export default function WebPortofolio() {
 
     switch (params["*"]) {
       case "home":
-        portofolioRef.current[0]?.scrollIntoView({ behavior: "smooth" });
+        portfolioRef.current[0]?.scrollIntoView({ behavior: "smooth" });
         break;
-      case "portofolio":
-        portofolioRef.current[1]?.scrollIntoView({ behavior: "smooth" });
+      case "portfolio":
+        portfolioRef.current[1]?.scrollIntoView({ behavior: "smooth" });
         break;
       case "clients":
-        portofolioRef.current[2]?.scrollIntoView({ behavior: "smooth" });
+        portfolioRef.current[2]?.scrollIntoView({ behavior: "smooth" });
         break;
       case "contact":
-        portofolioRef.current[3]?.scrollIntoView({ behavior: "smooth" });
+        portfolioRef.current[3]?.scrollIntoView({ behavior: "smooth" });
         break;
       default:
-        portofolioRef.current[0]?.scrollIntoView({ behavior: "smooth" });
+        portfolioRef.current[0]?.scrollIntoView({ behavior: "smooth" });
         break;
     }
   });
@@ -41,17 +41,17 @@ export default function WebPortofolio() {
       {/* TODO: CANT HANDLE THE SCROLL ACTION ON OVERFLOW */}
       {/* <div className="flex flex-col w-screen h-screen overflow-x-hidden overflow-y-auto"> */}
       {/* HEADER START */}
-      <Navbar portofolioRef={portofolioRef} />
+      <Navbar portfolioRef={portfolioRef} />
       {/* HEADER END */}
-      <HeroSection ref={(r) => (portofolioRef.current[0] = r)} />
+      <HeroSection ref={(r) => (portfolioRef.current[0] = r)} />
 
-      <PortofolioSection ref={(r) => (portofolioRef.current[1] = r)} />
+      <PortofolioSection ref={(r) => (portfolioRef.current[1] = r)} />
 
-      <ClientSection ref={(r) => (portofolioRef.current[2] = r)} />
+      <ClientSection ref={(r) => (portfolioRef.current[2] = r)} />
 
-      <ContactSection ref={(r) => (portofolioRef.current[3] = r)} />
+      <ContactSection ref={(r) => (portfolioRef.current[3] = r)} />
 
-      <FooterSection ref={(r) => (portofolioRef.current[4] = r)} />
+      <FooterSection portfolioRef={portfolioRef} />
 
       {/* MODAL USAGE IF USED */}
       {/* <BigModal

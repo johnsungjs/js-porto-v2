@@ -2,10 +2,10 @@ import { useEffect, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 interface NavbarProps {
-  portofolioRef: React.MutableRefObject<HTMLDivElement[] | null[]>;
+  portfolioRef: React.MutableRefObject<HTMLDivElement[] | null[]>;
 }
 
-export default function Navbar({ portofolioRef }: NavbarProps) {
+export default function Navbar({ portfolioRef }: NavbarProps) {
   const [hamburger, setHamburger] = useState(false);
 
   const headerRef = useRef<HTMLDivElement | null>(null);
@@ -63,65 +63,65 @@ export default function Navbar({ portofolioRef }: NavbarProps) {
                 } absolute py-5 bg-white shadow-lg rounded-lg max-w-[250px] w-full right-4 top-full lg:block lg:static lg:bg-transparent lg:max-w-full lg:shadow-none lg:rounded-none`}
               >
                 <ul className="block lg:flex">
-                  <li className="group">
-                    <button
-                      onClick={() => {
-                        portofolioRef.current[0]?.scrollIntoView({
-                          behavior: "smooth",
-                        });
-                        setHamburger(false);
-                        navigate("/home");
-                      }}
-                      className="text-base text-dark py-2 mx-8 flex group-hover:text-primary"
-                    >
+                  <li
+                    className="group cursor-pointer"
+                    onClick={() => {
+                      portfolioRef.current[0]?.scrollIntoView({
+                        behavior: "smooth",
+                      });
+                      setHamburger(false);
+                      navigate("/home");
+                    }}
+                  >
+                    <span className="text-base text-dark py-2 mx-8 flex group-hover:text-primary">
                       Home
-                    </button>
+                    </span>
                   </li>
 
-                  <li className="group">
-                    <button
-                      onClick={() => {
-                        portofolioRef.current[1]?.scrollIntoView({
-                          behavior: "smooth",
-                        });
-                        setHamburger(false);
-                        navigate("/portofolio");
-                      }}
-                      className="text-base text-dark py-2 mx-8 flex group-hover:text-primary"
-                    >
+                  <li
+                    className="group cursor-pointer"
+                    onClick={() => {
+                      portfolioRef.current[1]?.scrollIntoView({
+                        behavior: "smooth",
+                      });
+                      setHamburger(false);
+                      navigate("/portofolio");
+                    }}
+                  >
+                    <span className="text-base text-dark py-2 mx-8 flex group-hover:text-primary">
                       Portfolio
-                    </button>
+                    </span>
                   </li>
-                  {/* <li className="group">
+                  {/* <li className="group cursor-pointer">
                     <a href="#clients" className="text-base text-dark py-2 mx-8 flex group-hover:text-primary">Clients</a>
                   </li> */}
-                  <li className="group">
-                    <button
-                      onClick={() => {
-                        portofolioRef.current[2]?.scrollIntoView({
-                          behavior: "smooth",
-                        });
-                        setHamburger(false);
-                        navigate("/clients");
-                      }}
-                      className="text-base text-dark py-2 mx-8 flex group-hover:text-primary"
-                    >
+                  <li
+                    className="group cursor-pointer"
+                    onClick={() => {
+                      portfolioRef.current[2]?.scrollIntoView({
+                        behavior: "smooth",
+                      });
+                      setHamburger(false);
+                      navigate("/clients");
+                    }}
+                  >
+                    <span className="text-base text-dark py-2 mx-8 flex group-hover:text-primary">
                       Clients
-                    </button>
+                    </span>
                   </li>
-                  <li className="group">
-                    <button
-                      onClick={() => {
-                        portofolioRef.current[3]?.scrollIntoView({
-                          behavior: "smooth",
-                        });
-                        setHamburger(false);
-                        navigate("/contact");
-                      }}
-                      className="text-base text-dark py-2 mx-8 flex group-hover:text-primary"
-                    >
+                  <li
+                    className="group cursor-pointer"
+                    onClick={() => {
+                      portfolioRef.current[3]?.scrollIntoView({
+                        behavior: "smooth",
+                      });
+                      setHamburger(false);
+                      navigate("/contact");
+                    }}
+                  >
+                    <span className="text-base text-dark py-2 mx-8 flex group-hover:text-primary">
                       Contact
-                    </button>
+                    </span>
                   </li>
                 </ul>
               </nav>

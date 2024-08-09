@@ -1,6 +1,11 @@
-import { forwardRef } from "react";
+import { useNavigate } from "react-router-dom";
 
-export default forwardRef<HTMLDivElement>(function FooterSection() {
+interface FooterSectionProps {
+  portfolioRef: React.MutableRefObject<HTMLDivElement[] | null[]>;
+}
+
+export default function FooterSection({ portfolioRef }: FooterSectionProps) {
+  const navigate = useNavigate();
   return (
     <>
       {/* FOOTER SECTION START */}
@@ -13,36 +18,56 @@ export default forwardRef<HTMLDivElement>(function FooterSection() {
               </h3>
               <ul className="text-slate-300">
                 <li>
-                  <a
-                    href="#home"
-                    className="inline-block text-base hover:text-secondary"
+                  <span
+                    className="cursor-pointer inline-block text-base hover:text-secondary"
+                    onClick={() => {
+                      portfolioRef.current[0]?.scrollIntoView({
+                        behavior: "smooth",
+                      });
+                      navigate("/home");
+                    }}
                   >
-                    About Me
-                  </a>
+                    Home
+                  </span>
                 </li>
                 <li>
-                  <a
-                    href="#portfolio"
-                    className="inline-block text-base hover:text-secondary"
+                  <span
+                    className="cursor-pointer inline-block text-base hover:text-secondary"
+                    onClick={() => {
+                      portfolioRef.current[1]?.scrollIntoView({
+                        behavior: "smooth",
+                      });
+                      navigate("/portfolio");
+                    }}
                   >
                     Portfolio
-                  </a>
+                  </span>
                 </li>
                 <li>
-                  <a
-                    href="#clients"
-                    className="inline-block text-base hover:text-secondary"
+                  <span
+                    className="cursor-pointer inline-block text-base hover:text-secondary"
+                    onClick={() => {
+                      portfolioRef.current[2]?.scrollIntoView({
+                        behavior: "smooth",
+                      });
+                      navigate("/clients");
+                    }}
                   >
                     Clients
-                  </a>
+                  </span>
                 </li>
                 <li>
-                  <a
-                    href="#contact"
-                    className="inline-block text-base hover:text-secondary"
+                  <span
+                    className="cursor-pointer inline-block text-base hover:text-secondary"
+                    onClick={() => {
+                      portfolioRef.current[3]?.scrollIntoView({
+                        behavior: "smooth",
+                      });
+                      navigate("/contact");
+                    }}
                   >
                     Contact
-                  </a>
+                  </span>
                 </li>
               </ul>
             </div>
@@ -109,4 +134,4 @@ export default forwardRef<HTMLDivElement>(function FooterSection() {
       {/* FOOTER SECTION END */}
     </>
   );
-});
+}
