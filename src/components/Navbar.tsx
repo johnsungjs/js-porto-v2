@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 interface NavbarProps {
   portofolioRef: React.MutableRefObject<HTMLDivElement[] | null[]>;
@@ -8,6 +9,8 @@ export default function Navbar({ portofolioRef }: NavbarProps) {
   const [hamburger, setHamburger] = useState(false);
 
   const headerRef = useRef<HTMLDivElement | null>(null);
+
+  const navigate = useNavigate();
 
   useEffect(() => {
     window.onscroll = () => {
@@ -67,6 +70,7 @@ export default function Navbar({ portofolioRef }: NavbarProps) {
                           behavior: "smooth",
                         });
                         setHamburger(false);
+                        navigate("/home");
                       }}
                       className="text-base text-dark py-2 mx-8 flex group-hover:text-primary"
                     >
@@ -81,6 +85,7 @@ export default function Navbar({ portofolioRef }: NavbarProps) {
                           behavior: "smooth",
                         });
                         setHamburger(false);
+                        navigate("/portofolio");
                       }}
                       className="text-base text-dark py-2 mx-8 flex group-hover:text-primary"
                     >
@@ -97,6 +102,7 @@ export default function Navbar({ portofolioRef }: NavbarProps) {
                           behavior: "smooth",
                         });
                         setHamburger(false);
+                        navigate("/clients");
                       }}
                       className="text-base text-dark py-2 mx-8 flex group-hover:text-primary"
                     >
@@ -110,6 +116,7 @@ export default function Navbar({ portofolioRef }: NavbarProps) {
                           behavior: "smooth",
                         });
                         setHamburger(false);
+                        navigate("/contact");
                       }}
                       className="text-base text-dark py-2 mx-8 flex group-hover:text-primary"
                     >
