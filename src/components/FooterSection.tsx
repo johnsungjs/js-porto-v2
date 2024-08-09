@@ -118,7 +118,13 @@ export default function FooterSection({ portfolioRef }: FooterSectionProps) {
               </a>{" "}
               with{" "}
               <a href="https://react.dev/" className="font-bold text-sky-500">
-                ReactJS{" "}
+                ReactJS{", "}
+              </a>
+              <a href="https://www.framer.com/" className="font-bold text-sky-500">
+                Framer Motion{", "}
+              </a>
+              <a href="https://swiperjs.com/" className="font-bold text-sky-500">
+                SwiperJs{" "}
               </a>
               and{" "}
               <a

@@ -1,4 +1,6 @@
 import { forwardRef } from "react";
+import { motion } from "framer-motion";
+import { Direction, fadeIn } from "../utils/framerStyle";
 
 export default forwardRef<HTMLDivElement>(function ClientSection(_props, ref) {
   return (
@@ -7,7 +9,11 @@ export default forwardRef<HTMLDivElement>(function ClientSection(_props, ref) {
       <section ref={ref} id="clients" className="pt-36 pb-32 bg-slate-700">
         <div className="container">
           <div className="w-full px-4">
-            <div className="mx-auto text-center mb-16">
+            <motion.div
+              variants={fadeIn(Direction.UP, 0.2)}
+              initial="hidden"
+              whileInView={"show"}
+              viewport={{ once: false, amount: 0.2 }} className="mx-auto text-center mb-16">
               <h4 className="font-semibold text-lg text-secondary mb-2">
                 Clients
               </h4>
@@ -18,7 +24,7 @@ export default forwardRef<HTMLDivElement>(function ClientSection(_props, ref) {
                 My Previous satisfied clients, coming from various background
                 and size such as startup, individual business, and corporation{" "}
               </p>
-            </div>
+            </motion.div>
           </div>
           <div className="w-full px-4">
             <div className="flex flex-wrap items-center justify-center">

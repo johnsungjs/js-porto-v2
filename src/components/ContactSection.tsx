@@ -1,4 +1,6 @@
 import { forwardRef, useMemo, useState } from "react";
+import { motion } from "framer-motion";
+import { Direction, fadeIn } from "../utils/framerStyle";
 
 interface InputUser {
   name: string;
@@ -23,7 +25,13 @@ export default forwardRef<HTMLDivElement>(function ContactSection(_props, ref) {
     <>
       {/* CONTANCT SECTION START */}
       <section ref={ref} id="contact" className="pt-36 pb-32">
-        <div className="container">
+        <motion.div
+          variants={fadeIn(Direction.UP, 0.2)}
+          initial="hidden"
+          whileInView={"show"}
+          viewport={{ once: false, amount: 0.2 }}
+          className="container"
+        >
           <div className="w-full px-4">
             <div className="max-w-xl mx-auto text-center mb-16">
               <h4 className="font-semibold text-lg text-primary mb-2">
@@ -86,7 +94,7 @@ export default forwardRef<HTMLDivElement>(function ContactSection(_props, ref) {
               </div>
             </div>
           </form>
-        </div>
+        </motion.div>
       </section>
       {/* CONTANCT SECTION END */}
     </>

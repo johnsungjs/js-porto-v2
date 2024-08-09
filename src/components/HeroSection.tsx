@@ -1,4 +1,6 @@
 import { forwardRef } from "react";
+import { motion } from "framer-motion";
+import { Direction, fadeIn } from "../utils/framerStyle";
 
 export default forwardRef<HTMLDivElement>(function HeroSection(_props, ref) {
   return (
@@ -7,7 +9,11 @@ export default forwardRef<HTMLDivElement>(function HeroSection(_props, ref) {
       <section ref={ref} id="home" className="pt-36 bg-bgColor">
         <div className="container">
           <div className="flex flex-wrap">
-            <div className="w-full self-center px-4 lg:w-1/2">
+            <motion.div
+              variants={fadeIn(Direction.UP, 0.2)}
+              initial="hidden"
+              whileInView={"show"}
+              viewport={{ once: false, amount: 0.2 }} className="w-full self-center px-4 lg:w-1/2">
               <h1 className="text-base font-semibold text-textColor md:text-xl">
                 Hello I am,{" "}
                 <span className="block font-bold text-primary text-4xl mt-1 lg:text-5xl">
@@ -24,7 +30,7 @@ export default forwardRef<HTMLDivElement>(function HeroSection(_props, ref) {
               >
                 View My Curriculum Vitae
               </a>
-            </div>
+            </motion.div>
             <div className="w-full self-end px-4 lg:w-1/2">
               <div className="relative mt-10 lg:mt-9 lg:right-0">
                 <img
